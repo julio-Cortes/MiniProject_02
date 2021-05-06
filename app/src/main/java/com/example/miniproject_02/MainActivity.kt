@@ -11,11 +11,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            add<MainFragment>(R.id.main_fragment, "Contacts")
-        }
     }
 
 }

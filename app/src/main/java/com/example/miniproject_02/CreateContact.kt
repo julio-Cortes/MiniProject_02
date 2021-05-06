@@ -9,6 +9,8 @@ import android.widget.Button
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.setFragmentResultListener
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputEditText
 
 
@@ -24,9 +26,14 @@ class CreateContact : Fragment() {
         val nameInput = view.findViewById<TextInputEditText>(R.id.name_input)
         val phoneInput = view.findViewById<TextInputEditText>(R.id.phone_input)
         val button = view.findViewById<Button>(R.id.save_button)
+
         button.setOnClickListener{
-            setFragmentResult("REQUEST", bundleOf("DATA" to Contact(nameInput.text.toString(),phoneInput.text.toString())))
-            activity?.supportFragmentManager?.popBackStack()
+
+            setFragmentResult("key", bundleOf("contact" to  Contact(nameInput.text.toString(),phoneInput.text.toString())))
+
+            Navigation.findNavController(view).navigate(R.id.action_createContact_to_mainFragment)
+
+
         }
         return view
     }
