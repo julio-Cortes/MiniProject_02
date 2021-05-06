@@ -7,20 +7,38 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.miniproject_02.MainFragment"
+        android:name="com.example.miniproject_02.View.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_createContact"
             app:destination="@id/createContact" />
+        <action
+            android:id="@+id/action_mainFragment_to_editContact"
+            app:destination="@id/editContact" />
     </fragment>
     <fragment
         android:id="@+id/createContact"
-        android:name="com.example.miniproject_02.CreateContact"
+        android:name="com.example.miniproject_02.View.CreateContact"
         android:label="fragment_create_contact"
         tools:layout="@layout/fragment_create_contact" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
         <action
             android:id="@+id/action_createContact_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editContact"
+        android:name="com.example.miniproject_02.View.EditContact"
+        android:label="fragment_edit_contact"
+        tools:layout="@layout/fragment_edit_contact" >
+        <argument
+            android:name="contact"
+            app:argType="com.example.miniproject_02.Model.Contact" />
+        <action
+            android:id="@+id/action_editContact_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

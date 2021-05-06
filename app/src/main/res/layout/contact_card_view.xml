@@ -15,18 +15,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/cardview_dark_background"
         >
-
-        <TextView
-            android:id="@+id/name_text_view"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/cardview_dark_background"
-            android:textColor="@color/white"
-            android:paddingLeft="10dp"
-            android:layout_weight="1"
-            android:textSize="25dp"
-            android:text="TextView" />
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/name_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_dark_background"
+                android:textColor="@color/white"
+                android:paddingLeft="10dp"
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:text="TextView" />
+
+        </LinearLayout>
+
 
         <TextView
             android:id="@+id/number_text_view"
